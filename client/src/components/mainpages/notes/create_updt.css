@@ -1,0 +1,54 @@
+.margin{
+    margin: 13px 27px;
+}
+.create_product{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    /* justify-content: space-around; */
+}
+.create_product form{
+    max-width: 500px;
+    min-width: 290px;
+    width: 100%;
+    margin: 15px 30px;
+}
+.create_product form .row{
+    width: 100%;
+    margin: 15px 0;
+}
+.create_product form input, textarea{
+    width: 100%;
+    min-height: 40px;
+    padding: 0 15px;
+}
+.create_product form button{
+    width: 200px;
+    height: 40px;
+    background: rgb(7, 83, 83);
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+/* -------------create product responsive----------------- */
+@media(max-width: 756px){
+    .create_product{
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .create_product form{
+        min-width: 237px;
+    }
+    
+    #file_up::before{
+        font-size: 7rem;
+    }
+    .upload{
+        max-width: 250px;
+        height: 217px;
+    }
+}
