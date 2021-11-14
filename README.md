@@ -1,7 +1,7 @@
 # mytodoapp-mernstack
 > this website built with the MERN Stack with React Context API for state management, and pure CSS for style
 
-## Demo: https://todolist_app.herokuapp.com
+## Demo:https://todoapp-list-mern.herokuapp.com/
 
 ## installed dependencies for backend
 npm install   
