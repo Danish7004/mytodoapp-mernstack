@@ -24,15 +24,14 @@ app.use("/api", notesRouter);
 //Connect to Mongodb
 const URI = process.env.MONGODB_URI
 
-mongoose.connect(URI,{
+const connect = async() => {
+    await mongoose.connect(URI,{
     useNewUrlParser: true,
     useUnifiedTopology: true
 }, err =>{
     if(err) throw err;
     console.log('database connected')
-})
-
-
+})}
 
 
 //deployement config
@@ -52,4 +51,5 @@ if(process.env.NODE_ENV === "production"){
 const PORT = process.env.PORT || 8080
 app.listen(PORT, ()=>{
     console.log('server is running on port', PORT);
+    connect();
 })
