@@ -33,18 +33,21 @@ const connect = async() => {
     console.log('database connected')
 })}
 
-
+app.use(express.static(path.join(__dirname, "./client/build")))
 //deployement config
-if(process.env.NODE_ENV === "production"){
-    app.use(express.static(path.join(__dirname, "client/build")))
-    app.get(" * ", (req, res) => {
-        res.sendFile(path.resolve(__dirname, "client", "build", "index.html"))
+// if(process.env.NODE_ENV === "production"){
+    // app.use(express.static(path.join(__dirname, "client/build")))
+    app.get(" * ",function(_, res){
+        res.sendFile(path.join(__dirname, "./client/build/index.html")),
+        function(err){
+            res.status(500).send(err);
+        }
     })
-}else{
-    app.get("/", (req,res)=>{
-    res.json({msg: "hello world"})
-})
-}
+// }else{
+//     app.get("/", (req,res)=>{
+//     res.json({msg: "hello world"})
+// })
+// }
 
 
 
